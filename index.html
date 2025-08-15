@@ -67,47 +67,6 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
-        /* Top Header */
-        .top-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 15px 25px;
-            background: rgba(15, 12, 41, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            text-align: center;
-            border-bottom: 2px solid var(--electric-purple);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .top-bar h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 900;
-            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple), var(--gold));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: var(--glow-blue);
-            animation: gradient-pulse 4s ease infinite;
-            background-size: 300% 300%;
-            letter-spacing: 2px;
-        }
-
-        .top-bar .subtitle {
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            color: var(--gold);
-            margin-top: 5px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        @keyframes gradient-pulse {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
 
         /* Controls Section */
         .controls-block {
@@ -223,6 +182,8 @@
             animation: orb-pulse 3s ease-in-out infinite;
             padding: 20px;
             line-height: 1.3;
+            overflow: hidden;
+            word-wrap: break-word;
         }
 
         @keyframes orb-pulse {
@@ -918,7 +879,7 @@
         let totalScore = 0;
         let currentStreak = 0;
         let roundStartTime = 0;
-        let roundTimeLimit = 15000; // 15 seconds per round
+        let roundTimeLimit = 35000; // Changed from 15000 to 35000 (35 seconds)
         let roundTimer = null;
         let sessionStartTime = 0;
         let gameMode = 'rounds'; // 'rounds' or 'timer'
